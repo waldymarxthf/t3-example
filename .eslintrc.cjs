@@ -4,13 +4,18 @@ const config = {
   parserOptions: {
     project: true,
   },
-  plugins: ["@typescript-eslint"],
+  plugins: ["@typescript-eslint", "prettier"],
   extends: [
     "next/core-web-vitals",
     "plugin:@typescript-eslint/recommended-type-checked",
     "plugin:@typescript-eslint/stylistic-type-checked",
+    "prettier",
+    "plugin:prettier/recommended"
   ],
   rules: {
+    "prettier/prettier": ["error",{
+      "endOfLine": "auto"}
+    ],
     "@typescript-eslint/consistent-type-imports": [
       "warn",
       {
